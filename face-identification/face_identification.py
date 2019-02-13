@@ -174,7 +174,7 @@ history = model.fit(X_train, y_train, batch_size=64, epochs=20, validation_data=
 #%%
 test_images_path = os.path.join(os.path.abspath(path), 'test_images')
 test_image = image.load_img(os.path.join(test_images_path, 'test6.jpg'), target_size = scale)
-test_input_data = image.img_to_array(test_image) #/ 255
+test_input_data = image.img_to_array(test_image) / 255
 test_input_data = np.expand_dims(test_input_data, axis = 0)
 predictions = model.predict(test_input_data, batch_size=64, verbose=1)
 
